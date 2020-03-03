@@ -1,0 +1,9 @@
+.input-form {
+    width: 100%;
+    padding: 4%;
+    border-radius: 25px;
+    border: 1px solid var(--blue);
+}
+.m-5 {
+    border : 2px solid black;
+}
