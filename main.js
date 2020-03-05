@@ -7,6 +7,11 @@ let from = document.getElementById("from")
 let to = document.getElementById("to")
 
 convertButton.addEventListener("click",convert);
+const number = 123456.789;
+let currency =  Intl.NumberFormat('de-DE', { style: 'currency', currency: 'VND' }).format(number);
+
+console.log(currency)
+
 
 const currencyRatio = {
     usd:{
@@ -35,7 +40,9 @@ function convert() {
     let finalRatio = currencyRatio[inputCurrency.toLowerCase()][outputCurrency.toLowerCase()]
     console.log(finalRatio)
     let finalAmount = amount.value*finalRatio
-    resultArea.innerHTML = `this is the result ${finalAmount}`
+
+    let formatAmount = Intl.NumberFormat('de-DE', { style: 'currency', currency: `${outputCurrency}` }).format(finalAmount);
+    resultArea.innerHTML = `this is the result ${formatAmount}`
     console.log(finalAmount)
 }   
 
